@@ -12,7 +12,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: "8.2"
           coverage: pcov
 
       - name: Install dependencies
@@ -22,7 +22,7 @@ jobs:
         run: ./vendor/bin/php-cs-fixer fix --dry-run --diff
 
       - name: Run PHP lint
-        run: find src tests -name "*.php" -exec php -l {} \;
+        run: find src tests -name "*.php" -exec php -l {} \\;
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan analyse
